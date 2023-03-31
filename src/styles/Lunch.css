@@ -1,0 +1,25 @@
+.authorized {
+    display: flex;
+    width: 25rem;
+    height: 4rem;
+    background-color: #214528;
+    border-radius: 1rem;
+    color: #f7f7f7;
+    align-items: center;
+    justify-content: center;
+}
+.not-authorized {
+    display: flex;
+    width: 25rem;
+    height: 4rem;
+    background-color: #BF0D3E;
+    border-radius: 1rem;
+    color: #f7f7f7;
+    align-items: center;
+    justify-content: center;
+}
+span {
+    width: max-content;
+    height: max-content;
+    font-weight: bold;
+}
