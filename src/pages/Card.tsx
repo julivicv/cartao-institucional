@@ -1,7 +1,7 @@
 import "../styles/Card.css"
 import {QRCodeSVG} from "qrcode.react";
 import Lunch from "../components/Lunch";
-import IFLogo from "../assets/IFLogo.svg"
+import IFLogo from "/IFLogo.svg"
 import IFRSLogo from "../assets/IFRSLogo.png"
 import aaa from "../assets/aaa.jpg"
 
