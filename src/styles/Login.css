@@ -1,0 +1,146 @@
+.container {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: row;
+    background-color: #4c7a56;
+}
+
+.login-container, .img-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.form-container {
+    max-width: 80%;
+    width: 24rem;
+    height: 19rem;
+    background-color: #f7f7f7;
+    margin: auto;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+form {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+.login-title {
+    color: #214528;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0 ;
+}
+
+.mail-label, .pass-label {
+    position: relative;
+    max-width: 100%;
+}
+
+.mail, .pass {
+    max-width: 90%;
+    width: 300px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #214528;
+    border-radius: 0.75rem;
+    font-size: 14pt;
+    padding: 8px;
+}
+
+.mail-text, .pass-text {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    margin: 0 15px;
+    padding: 4px;
+    background-color: #f7f7f7;
+    color: #484848;
+    font-size: 13pt;
+    font-weight: bold;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.mail:focus, .pass:focus {
+    outline: 2px solid #214528;
+}
+
+.mail:focus ~ .mail-text {
+    transform: translateY(-30px) translateX(-5px) scale(.8);
+    color: #214528;
+    outline: #214528;
+}
+
+.pass:focus ~ .pass-text {
+    transform: translateY(-30px) translateX(-5px) scale(.8);
+    color: #214528;
+}
+
+.filled {
+    transform: translateY(-30px) translateX(-5px) scale(.8);
+    color: #214528;
+    outline: #214528;
+}
+
+.form-button {
+    max-width: 90%;
+    width: 300px;
+    height: 40px;
+    background-color: #4c7a56;
+    color: #f7f7f7;
+    border: 2px solid #214528;
+    border-radius: 0.75rem;
+    font-size: 14pt;
+    padding: 8px;
+}
+
+.img-container {
+    background-image: radial-gradient(
+    rgba(0, 0, 0, 0.42),
+    rgba(0, 0, 0, 0.42)
+    ), url("../assets/portico.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f7f7f7;
+}
+
+@media (max-width: 755px) {
+    .login-container {
+        width: 100%;
+        height: 100%;
+        padding: 0 12px;
+    }
+    .form-container {
+        width: 100%;
+    }
+    .img-container{
+        display: none;
+    }
+}
+
+@media (max-width: 410px) {
+    .login-container {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    .form-container {
+        width: 100%;
+    }
+    .img-container{
+        display: none;
+    }
+}
+
