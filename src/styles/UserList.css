@@ -110,6 +110,60 @@ th>span {
     color: #214528;
 }
 
-th:nth-child(3) {
-    width: 20%;
+th:first-of-type {
+    width: 30%;
+}
+
+th:last-of-type, td:last-of-type {
+    width: 128px;
+    padding: 0 1rem;
+}
+
+.user-line {
+    display: flex;
+    width: 3rem;
+}
+
+.user-main-content {
+    height: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-main-content>img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+}
+
+.user-class {
+    height: 3rem;
+}
+
+.user-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    height: 100%;
+}
+
+.user-delete, .user-edit {
+    border: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-radius: 0.25rem;
+}
+
+.user-delete {
+    background-color: #BF0D3E;
+}
+
+.user-edit {
+    background-color: #4c7a56;
 }

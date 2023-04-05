@@ -1,6 +1,8 @@
 import "../styles/UserList.css"
 import IFLogo from "/IFLogo.svg";
+import aaa from "../assets/aaa.jpg"
 import {useState} from "react";
+import TableUser from "../components/TableUser";
 export default function UserList () {
     const [dropdown, setDropdown] = useState(true)
     return (
@@ -18,16 +20,22 @@ export default function UserList () {
                 <h2 className={"table-title"}>Usuários</h2>
                 <table>
                     <thead>
-                        <th rowSpan={2}>
-                            <span>Usuário</span>
-                        </th>
-                        <th>
-                            <span>Curso</span>
-                        </th>
-                        <th>
-                            <span>Ações</span>
-                        </th>
+                        <tr>
+                            <th>
+                                <span>Usuário</span>
+                            </th>
+                            <th>
+                                <span>Curso</span>
+                            </th>
+                            <th>
+                                <span>Ações</span>
+                            </th>
+                        </tr>
                     </thead>
+                    <tbody>
+                        <TableUser id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+
+                    </tbody>
                 </table>
             </div>
         </div>
