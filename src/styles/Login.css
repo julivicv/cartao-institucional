@@ -113,8 +113,12 @@ form {
     outline: 2px solid #214528;
 }
 
+.mail-invalid:focus, .pass-invalid:focus {
+    outline: 2px solid #BF0D3E;
+}
+
 .mail-invalid, .pass-invalid {
-    background-color: rgba(191, 13, 62, 0.05);
+    border: 2px solid #BF0D3E;
 }
 
 .mail:focus ~ .mail-text {
