@@ -151,6 +151,10 @@ form {
     padding: 8px;
 }
 
+.form-button:hover {
+    background-color: #395d42;
+}
+
 .img-container {
     background-image: radial-gradient(
             rgba(0, 0, 0, 0.42),

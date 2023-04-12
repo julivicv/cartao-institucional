@@ -2,9 +2,11 @@ import "../styles/UserList.css"
 import IFLogo from "/IFLogo.svg";
 import aaa from "../assets/aaa.jpg"
 import {useState} from "react";
-import TableUser from "../components/TableUser";
+import UserRow from "../components/UserRow";
+import UserForm from "../components/UserForm";
 export default function UserList () {
     const [dropdown, setDropdown] = useState(true)
+    const [modal, setModal] = useState(true)
     return (
         <div className={"users-background"}>
             <header>
@@ -18,26 +20,25 @@ export default function UserList () {
             </header>
             <div className={"users-list"}>
                 <h2 className={"table-title"}>Usuários</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
+                <div className={"grid"}>
+                    <div className={"user-header"}>
+                            <div>
                                 <span>Usuário</span>
-                            </th>
-                            <th>
+                            </div>
+                            <div>
                                 <span>Curso</span>
-                            </th>
-                            <th>
+                            </div>
+                            <div>
                                 <span>Ações</span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <TableUser id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
-
-                    </tbody>
-                </table>
+                            </div>
+                    </div>
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                </div>
             </div>
+            <dialog open>
+                <UserForm />
+            </dialog>
         </div>
     )
 }

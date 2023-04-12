@@ -60,13 +60,14 @@ header>a:focus, header>a:hover {
     padding: 0.5rem;
     border: solid 1px #484848;
     border-radius: 0.25rem;
-    background-color: #d0d0d0;
+    background-color: #fff;
     text-decoration: none;
     color: #214528;
+    font-weight: bold;
 }
 
 .dropdown-content>a:hover {
-    background-color: #a4a4a4;
+    background-color: #e3e3e3;
 }
 
 .open {
@@ -90,63 +91,59 @@ header>a:focus, header>a:hover {
     color: #214528;
 }
 
-table {
-    margin: auto;
-    width: 100%;
-    overflow: scroll;
+.user-header>div {
+    padding: 0.5rem 0;
 }
 
-thead {
-    background-color: #e3e3e3;
-    padding: 0.75rem 0;
-}
-
-th {
-    border: 0;
-}
-
-th>span {
+.user-header>div>span {
     font-size: 13pt;
     color: #214528;
 }
 
-th:first-of-type {
-    width: 30%;
-}
-
-th:last-of-type, td:last-of-type {
-    width: 128px;
-    padding: 0 1rem;
-}
-
-.user-line {
-    display: flex;
+.user-row, .user-header {
     width: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr ;
+    width: 100%;
+
+}
+
+.user-row {
+    border-bottom: rgba(164, 164, 164, 0.3) solid 0.125rem;
+}
+
+.user-row:hover {
+    border-bottom: rgba(164, 164, 164, 0.5) solid 0.125rem;
+    background-color: rgba(164, 164, 164, 0.2);
+    border-radius: 0.25rem;
+}
+
+.user-main-content, .user-class, .user-actions {
+    height: 3rem;
+    display: flex;
+    align-items: center;
 }
 
 .user-main-content {
-    height: 3rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    gap: 1.5rem;
 }
 
 .user-main-content>img {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 100%;
+    margin: 0 0 0 2rem;
+    font-weight: normal;
 }
 
 .user-class {
-    height: 3rem;
+    justify-content: space-evenly;
 }
 
 .user-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 0.75rem;
     height: 100%;
+    justify-content: center;
 }
 
 .user-delete, .user-edit {
@@ -166,4 +163,24 @@ th:last-of-type, td:last-of-type {
 
 .user-edit {
     background-color: #4c7a56;
+}
+
+.user-edit:hover {
+    background-color: #35563d;
+}
+
+.user-delete:hover {
+    background-color: #a40b34;
+}
+
+dialog {
+    border: 0;
+    border-radius: 1rem;
+    position:fixed;
+    background: white;
+    width: 50%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
