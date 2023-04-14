@@ -79,12 +79,19 @@ header>a:focus, header>a:hover {
 }
 
 .users-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: auto 0;
     width: 60%;
     height: 80%;
     border-radius: 1rem;
     padding: 1rem;
     background-color: #f7f7f7;
+}
+
+.list-content {
+    max-height: 440px;
 }
 
 .table-title {
@@ -98,6 +105,11 @@ header>a:focus, header>a:hover {
 .user-header>div>span {
     font-size: 13pt;
     color: #214528;
+}
+
+.list {
+    max-height: 340px;
+    overflow-y: scroll;
 }
 
 .user-row, .user-header {
@@ -183,4 +195,20 @@ dialog {
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+}
+
+.add-user {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: #4c7a56;
+    border: 0;
+    border-radius: 1rem;
+    padding: 0;
+}
+
+.plus {
+    font-weight: bold;
+    color: #fff;
+    margin: auto;
 }

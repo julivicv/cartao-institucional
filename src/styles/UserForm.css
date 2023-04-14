@@ -1,0 +1,90 @@
+.name-label,
+.mail-label,
+.pass-label {
+    position: relative;
+    max-width: 100%;
+}
+
+.name,
+.mail,
+.pass {
+    max-width: 90%;
+    width: 300px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #214528;
+    border-radius: 0.75rem;
+    font-size: 14pt;
+    padding: 8px;
+}
+
+.name-placeholder,
+.mail-placeholder,
+.pass-placeholder{
+    position: absolute;
+    left: 0;
+    top: 16px;
+    margin: 0 15px;
+    padding: 4px;
+    background-color: #fff;
+    color: #484848;
+    font-size: 13pt;
+    font-weight: bold;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.shown {
+    color: #d0d0d0;
+}
+
+.invalid-feedback {
+    position: absolute;
+    left: 2%;
+    bottom: -22px;
+    font-weight: bolder;
+    font-size: medium;
+    color: #BF0D3E;
+    background-color: rgba(191, 13, 62, 0.15);
+    border-radius: 3px;
+    padding: 1px;
+    z-index: 1;
+}
+
+.name:focus,
+.mail:focus,
+.pass:focus {
+    outline: 2px solid #214528;
+}
+
+.user-invalid:focus,
+.mail-invalid:focus,
+.pass-invalid:focus {
+    outline: 2px solid #BF0D3E;
+}
+
+.name:focus ~ .name-placeholder,
+.mail:focus ~ .mail-placeholder,
+.pass:focus ~ .pass-placeholder,
+.filled{
+    transform: translateY(-32px) translateX(-5px) scale(.8);
+    color: #214528;
+    outline: #214528;
+}
+
+.form-button {
+    max-width: 90%;
+    width: 300px;
+    height: 40px;
+    background-color: #4c7a56;
+    color: #f7f7f7;
+    border: 2px solid #214528;
+    border-radius: 0.75rem;
+    font-size: 14pt;
+    padding: 8px;
+}
+
+.form-button:hover {
+    background-color: #395d42;
+}

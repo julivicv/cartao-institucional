@@ -4,7 +4,12 @@ import aaa from "../assets/aaa.jpg"
 import {useState} from "react";
 import UserRow from "../components/UserRow";
 import UserForm from "../components/UserForm";
-export default function UserList () {
+import {Plus} from "@phosphor-icons/react";
+
+type Values = {
+    courses: Array<{ course: string, id: string }>;
+}
+export default function UserList ( { courses }:Values ) {
     const [dropdown, setDropdown] = useState(true)
     const [modal, setModal] = useState(true)
     return (
@@ -19,6 +24,7 @@ export default function UserList () {
                 </div>
             </header>
             <div className={"users-list"}>
+                <div className={"list-content"}>
                 <h2 className={"table-title"}>Usuários</h2>
                 <div className={"grid"}>
                     <div className={"user-header"}>
@@ -32,12 +38,46 @@ export default function UserList () {
                                 <span>Ações</span>
                             </div>
                     </div>
+                    <div className={"list"}>
                         <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
                         <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                        <UserRow id={"2"} name={"Júlio"} img={aaa} group={"3°INFO"} />
+                    </div>
                 </div>
+                </div>
+                <button
+                    type={"button"}
+                    className={"add-user"}>
+                    <Plus weight={"bold"} size={32} className={"plus"}/>
+                </button>
             </div>
-            <dialog open>
-                <UserForm />
+            <dialog>
+                <UserForm name={''} email={''} password={''} file={''} birthDate={''} course={''} courses={courses} />
             </dialog>
         </div>
     )
