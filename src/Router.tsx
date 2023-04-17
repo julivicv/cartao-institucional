@@ -10,7 +10,7 @@ export default function Router() {
         <Routes>
             <Route path={"/"} element={<Login />} />
             <Route path={"/card"} element={<Card name={"Júlio"} birth={"14/02/05"} href={"a.com"} group={"3°INFO"} link={"a.com"}/>}/>
-            <Route path={"/users"} element={<UserList courses={[{ 'course': 'Turma1', 'id': "T1"}, { 'course': 'Turma2', 'id': "T2"}]}/>}/>
+            <Route path={"/users"} element={<UserList name={"Júlio"} email={"julivicv@gmail.com"} password={"123456"} file={"aaa"} birthDate={"2005-02-14"} course={"3°INFO"} courses={[{ 'course': 'Turma1', 'id': "T1"}, { 'course': 'Turma2', 'id': "T2"}]}/>}/>
         </Routes>
     )
 }
