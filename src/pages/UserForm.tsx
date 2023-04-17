@@ -8,21 +8,27 @@ type FormValues = {
     name: string | null;
     email: string | null;
     password: string | null;
-    file: File | null | null;
+    file: File | null | string;
     birthDate: string | null;
     course: string | null;
     courses: Array<{ course: string, id: string }>;
 }
 
-export default function UserForm ( { courses }:FormValues ) {
+export default function UserForm ( { name, email, password, file, birthDate, course, courses }:FormValues ) {
+    const userEdit = () => {
+
+    }
+
     const allCourses = courses.map(({course}) => {
         return course
     })
-    const productOptions = courses.map(({course, id}, key) => (
+
+    const courseOptions = courses.map(({course, id}, key) => (
         <option value={id} key={key}>
             {course}
         </option>
     ));
+
     const validationSchema = Yup.object().shape({
         name: Yup.string()
             .required('Campo obrigatório'),
@@ -57,37 +63,68 @@ export default function UserForm ( { courses }:FormValues ) {
         console.log(JSON.stringify(data, null, 2));
     };
 
+    const [formData, setFormData] = useState({
+        name: name,
+        email: email,
+        password: password,
+        file: file,
+        birthDate: birthDate,
+        course: course,
+    })
+
+    const handleInputChange = (event:any) => {
+        const {name, value} = event.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+        console.log(formData)
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <label className={"name-label"}>
                 <input type={"text"} className={`name ${!errors.name ? '' : 'name-invalid'}`}
                        {...register("name")}
+                       name={'name'}
+                       onChange={handleInputChange}
                 />
                 <div className={"invalid-feedback"}>{errors.email?.message}</div>
-                <span className={"name-placeholder"}>Nome</span>
+                <span className={`name-placeholder  ${formData.name != "" ? 'filled' : ''}`}>Nome</span>
             </label>
             <label className={"mail-label"}>
                 <input type={"text"} className={`mail ${!errors.name ? '' : 'mail-invalid'}`}
                        {...register("email")}
+                       name={'email'}
+                       onChange={handleInputChange}
                 />
                 <div className={"invalid-feedback"}>{errors.email?.message}</div>
-                <span className={"mail-placeholder"}>E-mail</span>
+                <span className={`mail-placeholder ${formData.email != "" ? 'filled' : ''}`}>E-mail</span>
             </label>
             <label className={"pass-label"}>
                 <input type={"text"} className={`pass ${!errors.name ? '' : 'mail-invalid'}`}
                        {...register("password")}
+                       name={'password'}
+                       onChange={handleInputChange}
                 />
                 <div className={"invalid-feedback"}>{errors.email?.message}</div>
-                <span className={"pass-placeholder"}>Senha</span>
+                <span className={`pass-placeholder  ${formData.password != "" ? 'filled' : ''}`}>Senha</span>
             </label>
-            <input type="date"/>
-            <input type="file"/>
-            <select name="cursos" id="cursos">
-                {productOptions}
+            <input type="date"
+                   name={'birthDate'}
+                   onChange={handleInputChange}/>
+            <input type="file"
+                   name={"file"}
+                   onChange={handleInputChange}/>
+            <select name="course"
+                    id="cursos"
+                    onChange={handleInputChange}>
+                {courseOptions}
             </select>
-            <button className={"form-button"} type={"submit"}>
+            <button className={"form-button"}
+                    type={"submit"}>
                 Adicionar
             </button>
         </form>
-    )
+    );
 }

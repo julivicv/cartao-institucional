@@ -91,7 +91,11 @@ header>a:focus, header>a:hover {
 }
 
 .list-content {
-    max-height: 440px;
+    height: 90%;
+}
+
+.grid {
+    height: 100%;
 }
 
 .table-title {
@@ -108,7 +112,7 @@ header>a:focus, header>a:hover {
 }
 
 .list {
-    max-height: 340px;
+    max-height: calc(100% - 100px);
     overflow-y: scroll;
 }
 
@@ -211,4 +215,8 @@ dialog {
     font-weight: bold;
     color: #fff;
     margin: auto;
+}
+
+.hidden {
+    display: none;
 }

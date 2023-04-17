@@ -3,6 +3,7 @@ import Card from "./pages/Card";
 import React from "react";
 import Login from "./pages/Login";
 import UserList from "./pages/UserList";
+import UserForm from "./pages/UserForm";
 
 export default function Router() {
     return (
