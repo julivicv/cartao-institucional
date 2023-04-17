@@ -4,9 +4,10 @@ export interface props {
     id: string;
     name: string;
     img: string;
-    group: string
+    group: string;
+    edit: any;
 }
-export default function UserRow ({id, name, img, group}:props) {
+export default function UserRow ({id, name, img, group, edit}:props) {
     return (
         <div className={"user-row"}>
             <div className={"user-main-content"}>
@@ -17,7 +18,8 @@ export default function UserRow ({id, name, img, group}:props) {
                 {group}
             </div>
             <div className={"user-actions"}>
-                <button className={"user-edit"}>
+                <button className={"user-edit"}
+                onClick={edit}>
                     <Pencil weight={"duotone"} color={"#fff"} size={20} />
                 </button>
                 <button className={"user-delete"}>
