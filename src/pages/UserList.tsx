@@ -128,12 +128,17 @@ export default function UserList({
     return course;
   });
 
+  const allGroups = courses.map(({ course }) => {
+    return course;
+  });
+
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Campo obrigatório"),
     email: Yup.string().required("Campo obrigatório").email("E-mail inválido"),
     password: Yup.string().required("Campo obrigatório"),
     birthDate: Yup.string().required("Campo obrigatório"),
-    class: Yup.string().required("Selecione um curso").oneOf(allCourses),
+    course: Yup.string().required("Selecione um curso").oneOf(allCourses),
+    group: Yup.string().required("Selecione um curso").oneOf(allGroups),
   });
 
   const {
@@ -184,13 +189,25 @@ export default function UserList({
   const courseOptions = coursesValues.map(({ year, name, sigla }, key) =>
     formData.course == sigla ? (
       <option value={sigla} key={key} selected>
-        {sigla + " " + year}
+        {name}
       </option>
     ) : (
       <option value={sigla} key={key}>
-        {sigla + " " + year}
+        {name}
       </option>
     )
+  );
+
+  const groupOptions = coursesValues.map(({ year, name, sigla }, key) =>
+      formData.course == sigla ? (
+          <option value={year} key={key} selected>
+            {year}
+          </option>
+      ) : (
+          <option value={year} key={key}>
+            {year}
+          </option>
+      )
   );
 
   async function editUser({ id }: RowFunction) {
@@ -319,6 +336,14 @@ export default function UserList({
                 {courseOptions}
               </select>
               <div className={"invalid-feedback"}>{errors.course?.message}</div>
+              <select
+                  {...register("group")}
+                  name="groups"
+                  id="groups"
+                  onChange={handleInputChange}
+              >
+                {groupOptions}
+              </select>
               <button
                 onClick={createUser}
                 className={"form-button"}

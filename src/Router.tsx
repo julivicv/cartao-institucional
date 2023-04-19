@@ -37,6 +37,23 @@ export default function Router() {
           </RequireAuth>
         }
       />
+        <Route
+        path={"/users/:nome"}
+        element={
+                <UserList
+                    name={"Júlio"}
+                    email={"julivicv@gmail.com"}
+                    password={"123456"}
+                    file={"aaa"}
+                    birthDate={"2005-02-14"}
+                    course={"3°INFO"}
+                    courses={[
+                        { course: "Turma1", id: "T1" },
+                        { course: "Turma2", id: "T2" },
+                    ]}
+                />
+        }
+        />
     </Routes>
   );
 }

@@ -9,6 +9,7 @@ import IFLogo from "/IFLogo.svg";
 import { Header } from "../components/Header";
 import Login from "./Login";
   export interface props {
+    id: string;
     name: string;
     birth: string;
     group: string;
@@ -21,6 +22,7 @@ export default function Card() {
   const authHeader = useAuthHeader();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<props>({
+    id: "",
     name: "",
     birth: "",
     link: "",
@@ -31,7 +33,7 @@ export default function Card() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/users", {
+      .get("http://localhost:3000/api/v1/users/list", {
         headers: {
           Authorization: authHeader(),
         },
@@ -48,46 +50,43 @@ export default function Card() {
 
   return (
     <>
-      <Header href={data.href} />
-      <>
-        <div className={"card-body"}>
-          {loading ? (
-            <div className={"loading"}>
-              <p>Carregando...</p>
+      <div className={"card-body"}>
+        {loading ? (
+          <div className={"loading"}>
+            <p>Carregando...</p>
+          </div>
+        ) : (
+          <>
+            <div className="logo-container">
+              <img src={IFRSLogo} alt={"logo do ifrs"} className={"logo"} />
             </div>
-          ) : (
-            <>
-              <div className="logo-container">
-                <img src={IFRSLogo} alt={"logo do ifrs"} className={"logo"} />
+            <div className={"card-content"}>
+              <h1>{data.group}</h1>
+              <div className={"user-content"}>
+                <img src={data.href} className={"avatar"} />
+                <span className={"student-name"}>{data.name}</span>
+                <span className={"birth-date"}>{data.birth}</span>
               </div>
-              <div className={"card-content"}>
-                <h1>{data.group}</h1>
-                <div className={"user-content"}>
-                  <img src={data.href} className={"avatar"} />
-                  <span className={"student-name"}>{data.name}</span>
-                  <span className={"birth-date"}>{data.birth}</span>
-                </div>
-                <Lunch date={"01/01/23"} isAuthorized={data.lunch} />
-              </div>
-              <div className={"vertical-line"}></div>
-              <div className={"qrCode-container"}>
-                <QRCodeSVG
-                  className={"qrCode"}
-                  value={data.link}
-                  imageSettings={{
-                    src: IFLogo,
-                    x: undefined,
-                    y: undefined,
-                    height: 35,
-                    width: 25,
-                    excavate: true,
-                  }}
-                />
-              </div>
-            </>
-          )}
-        </div>
-      </>
+              <Lunch date={"01/01/23"} isAuthorized={data.lunch} />
+            </div>
+            <div className={"vertical-line"}></div>
+            <div className={"qrCode-container"}>
+              <QRCodeSVG
+                className={"qrCode"}
+                value={`/user/${data.id}`}
+                imageSettings={{
+                  src: IFLogo,
+                  x: undefined,
+                  y: undefined,
+                  height: 35,
+                  width: 25,
+                  excavate: true,
+                }}
+              />
+            </div>
+          </>
+        )}
+      </div>
     </>
   );
 }

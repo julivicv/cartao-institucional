@@ -15,6 +15,8 @@ type FormValues = {
 
 export default function Login() {
   const signIn = useSignIn();
+  const intialValues = { email: "", password: "" };
+  const [formValues, setFormValues] = useState(intialValues);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [shownPassword, setShownPassword] = useState(false);
@@ -23,6 +25,11 @@ export default function Login() {
     password: Yup.string().required("Digite sua senha"),
   });
   const navigate = useNavigate();
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
 
   const {
     register,
@@ -65,8 +72,9 @@ export default function Login() {
                 type={"text"}
                 className={`mail ${!errors.email ? "" : "mail-invalid"}`}
                 {...register("email")}
-                onChange={(event) => setEmail(event.target.value)}
-                value={email}
+                onChange={handleChange}
+                value={formValues.email}
+                name={"email"}
               />
               <div className={"invalid-feedback"}>{errors.email?.message}</div>
               <span className={email != "" ? "mail-text filled" : "mail-text"}>
@@ -80,8 +88,9 @@ export default function Login() {
                   shownPassword ? "shown" : ""
                 }}`}
                 {...register("password")}
-                onChange={(event) => setPassword(event.target.value)}
-                value={password}
+                onChange={handleChange}
+                value={formValues.password}
+                name={"password"}
               />
 
               <div className={`invalid-feedback`}>
