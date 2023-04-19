@@ -7,6 +7,7 @@ import Lunch from "../components/Lunch";
 import "../styles/Card.css";
 import IFLogo from "/IFLogo.svg";
 import { Header } from "../components/Header";
+import Login from "./Login";
   export interface props {
     name: string;
     birth: string;
@@ -36,15 +37,8 @@ export default function Card() {
         },
       })
       .then((response) => {
-        console.log("response:", response.data.message.returnData.lunch);
-        setData({
-          name: response.data.message.returnData.name,
-          birth: response.data.message.returnData.birthDate,
-          link: response.data.message.returnData.linkAuthorized,
-          group: response.data.message.returnData.course.sigla,
-          href: response.data.message.returnData.photoFile,
-          lunch: response.data.message.returnData.lunch,
-        });
+        console.log("response:", response.data.message.returnData);
+
         setLoading(false);
       })
       .catch((error) => {
