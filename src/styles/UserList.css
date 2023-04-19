@@ -1,222 +1,254 @@
 .users-background {
-    width: 100%;
-    height: 100%;
-    background-color: #4c7a56;
-    display: flex;
-    flex-direction: column;
-    justify-content: normal;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #4c7a56;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+  position: relative;
 }
 
 header {
-    width: 100%;
-    height: 4.5rem;
-    background-color: #f7f7f7;
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  width: 100%;
+  height: 4.5rem;
+  background-color: #f7f7f7;
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-
+.headerNew {
+  display: flex;
+  flex-direction: col;
+}
 .header-logo {
-    width: fit-content;
-    height: 3.5rem;
-    margin: auto 0;
+  width: fit-content;
+  height: 3.5rem;
+  margin: auto 0;
 }
 
-header>a {
-    text-decoration: none;
-    color: #214528;
-    font-weight: bold;
-    margin: auto 0;
+header > a {
+  text-decoration: none;
+  color: #214528;
+  font-weight: bold;
+  margin: auto 0;
 }
 
-header>a:focus, header>a:hover {
-    text-decoration: underline #214528;
+header > a:focus,
+header > a:hover {
+  text-decoration: underline #214528;
 }
 
 .dropdown-container {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin: auto 0;
-    border-radius: 100%;
-    background-color: #484848;
-    position: relative;
+  border: solid 4px #4c7a56;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: auto 0;
+  border-radius: 100%;
+  background-color: #484848;
+  position: relative;
+}
+.dropdown-container button {
+  border: 0;
+  background-color: #214528;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 4px;
+}
+.dropdown-container button:focus {
+  outline: none;
+}
+.dropdown-container button:hover {
+  background-color: #4c7a56;
+}
+
+.dropdown-container img {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: auto;
+  border-radius: 100%;
 }
 
 .dropdown-content {
-    position: absolute;
-    width: 8rem;
-    height: fit-content;
-    top: 3.75rem;
-    left: 0;
+  position: absolute;
+  width: 8rem;
+  height: fit-content;
+  top: 3.75rem;
+  left: 0;
 }
 
-.dropdown-content>a {
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
-    border: solid 1px #484848;
-    border-radius: 0.25rem;
-    background-color: #fff;
-    text-decoration: none;
-    color: #214528;
-    font-weight: bold;
+.dropdown-content > a {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  border: solid 1px #484848;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  text-decoration: none;
+  color: #214528;
+  font-weight: bold;
 }
 
-.dropdown-content>a:hover {
-    background-color: #e3e3e3;
+.dropdown-content > a:hover {
+  background-color: #e3e3e3;
 }
 
 .open {
-    display: flex;
+  display: flex;
 }
 
 .closed {
-    display: none;
+  display: none;
 }
 
 .users-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: auto 0;
-    width: 60%;
-    height: 80%;
-    border-radius: 1rem;
-    padding: 1rem;
-    background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto 0;
+  width: 60%;
+  height: 80%;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #f7f7f7;
 }
 
 .list-content {
-    height: 90%;
+  height: 90%;
 }
 
 .grid {
-    height: 100%;
+  height: 100%;
 }
 
 .table-title {
-    color: #214528;
+  color: #214528;
 }
 
-.user-header>div {
-    padding: 0.5rem 0;
+.user-header > div {
+  padding: 0.5rem 0;
 }
 
-.user-header>div>span {
-    font-size: 13pt;
-    color: #214528;
+.user-header > div > span {
+  font-size: 13pt;
+  color: #214528;
 }
 
 .list {
-    max-height: calc(100% - 100px);
-    overflow-y: scroll;
+  max-height: calc(100% - 100px);
+  overflow-y: scroll;
 }
 
-.user-row, .user-header {
-    width: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr 0.5fr ;
-    width: 100%;
-
+.user-row,
+.user-header {
+  width: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.5fr;
+  width: 100%;
 }
 
 .user-row {
-    border-bottom: rgba(164, 164, 164, 0.3) solid 0.125rem;
+  border-bottom: rgba(164, 164, 164, 0.3) solid 0.125rem;
 }
 
 .user-row:hover {
-    border-bottom: rgba(164, 164, 164, 0.5) solid 0.125rem;
-    background-color: rgba(164, 164, 164, 0.2);
-    border-radius: 0.25rem;
+  border-bottom: rgba(164, 164, 164, 0.5) solid 0.125rem;
+  background-color: rgba(164, 164, 164, 0.2);
+  border-radius: 0.25rem;
 }
 
-.user-main-content, .user-class, .user-actions {
-    height: 3rem;
-    display: flex;
-    align-items: center;
+.user-main-content,
+.user-class,
+.user-actions {
+  height: 3rem;
+  display: flex;
+  align-items: center;
 }
 
 .user-main-content {
-    gap: 1.5rem;
+  gap: 1.5rem;
 }
 
-.user-main-content>img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 100%;
-    margin: 0 0 0 2rem;
-    font-weight: normal;
+.user-main-content > img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  margin: 0 0 0 2rem;
+  font-weight: normal;
 }
 
 .user-class {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .user-actions {
-    gap: 0.75rem;
-    height: 100%;
-    justify-content: center;
+  gap: 0.75rem;
+  height: 100%;
+  justify-content: center;
 }
 
-.user-delete, .user-edit {
-    border: 0;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    border-radius: 0.25rem;
+.user-delete,
+.user-edit {
+  border: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 0.25rem;
 }
 
 .user-delete {
-    background-color: #BF0D3E;
+  background-color: #bf0d3e;
 }
 
 .user-edit {
-    background-color: #4c7a56;
+  background-color: #4c7a56;
 }
 
 .user-edit:hover {
-    background-color: #35563d;
+  background-color: #35563d;
 }
 
 .user-delete:hover {
-    background-color: #a40b34;
+  background-color: #a40b34;
 }
 
 dialog {
-    border: 0;
-    border-radius: 1rem;
-    position:fixed;
-    background: white;
-    width: 50%;
-    height: auto;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+  border: 0;
+  border-radius: 1rem;
+  position: fixed;
+  background: white;
+  width: 50%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .add-user {
-    display: flex;
-    height: 50px;
-    width: 100%;
-    background-color: #4c7a56;
-    border: 0;
-    border-radius: 1rem;
-    padding: 0;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background-color: #4c7a56;
+  border: 0;
+  border-radius: 1rem;
+  padding: 0;
 }
 
 .plus {
-    font-weight: bold;
-    color: #fff;
-    margin: auto;
+  font-weight: bold;
+  color: #fff;
+  margin: auto;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
